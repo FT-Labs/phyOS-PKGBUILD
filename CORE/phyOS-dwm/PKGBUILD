@@ -9,10 +9,10 @@ license=('MIT')
 depends=('libxcb' 'libxft-bgra' 'imlib2' 'libconfig')
 makedepends=('git' 'make')
 optdepends=('fonts-phyOS' 'dmenu-phyOS' 'st-phyOS')
-provides=("dwm", "dwmblocks")
-conflicts=("dwm", "dwmblocks")
+provides=("dwm" "dwmblocks")
+conflicts=("dwm" "dwmblocks")
 options=('zipman')
-source=('git+https://github.com/PhyTech-R0/dwm-phyOS')
+source=('git+https://github.com/PhyTech-R0/phyOS-dwm')
 md5sums=('SKIP')
 
 build() {
@@ -21,5 +21,6 @@ build() {
 }
 
 package() {
+    cd "$pkgname"
 	make PREFIX=/usr DESTDIR="$pkgdir/" install
 }
