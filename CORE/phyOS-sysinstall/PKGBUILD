@@ -1,0 +1,27 @@
+# Maintainer: Arda Atci <arda@phytech.io>
+pkgname=phyOS-sysinstall
+_destname1="/etc/xdg/autostart"
+_destname2="/usr/local/bin/"
+_licensedir="/usr/share/phyOS/licenses/"
+pkgver=1.0
+pkgrel=1
+pkgdesc="Installation files for phyOS"
+arch=('any')
+url="https://github.com/phytech-r0/phyOS-sysinstall"
+license=('AGPL3')
+makedepends=('git')
+depends=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+https://github.com/phytech-r0/${pkgname}")
+sha256sums=('SKIP')
+package() {
+  install -dm755 "$pkgdir/$_licensedir/$pkgname"
+  install -m644 "$srcdir/$pkgname/LICENSE" "$pkgdir/$_licensedir/$pkgname"
+
+  install -dm755 "$pkgdir$_destname1"
+  cp -r "$srcdir/$pkgname/$_destname1/"* "$pkgdir$_destname1"
+
+  install -dm755 "$pkgdir$_destname2"
+  cp -r "$srcdir/$pkgname/$_destname2/"* "$pkgdir$_destname2"
+}
