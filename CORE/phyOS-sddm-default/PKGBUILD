@@ -1,0 +1,22 @@
+# Maintainer: Arda Atci <arda@phytech.io>
+pkgname=phyOS-sddm-default
+_destname1="/usr"
+_licensedir="/usr/share/arcolinux/licenses/"
+pkgver=1.0
+pkgrel=0
+pkgdesc="Default sddm theme for phyOS"
+arch=('any')
+url="https://github.com/phytech-r0/${pkgname}"
+license=('GPL3')
+depends=('qt5-quickcontrols2')
+makedepends=('git')
+options=(!strip !emptydirs)
+replaces=()
+source=(${pkgname}::git+$url)
+sha256sums=('SKIP')
+package() {
+  install -dm755 ${pkgdir}${_licensedir}${pkgname}
+  install -m644  ${srcdir}/${pkgname}/LICENSE ${pkgdir}${_licensedir}${pkgname}
+
+  cp -r ${srcdir}/${pkgname}/${_destname1} ${pkgdir}
+}
