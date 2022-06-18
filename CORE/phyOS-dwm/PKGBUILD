@@ -1,10 +1,10 @@
 # Maintainer: Arda Atci<arda@phytech.io>
 pkgname=phyOS-dwm
-pkgver=1.1
+pkgver=1.1.1
 pkgrel=1
 pkgdesc="dwm build for phyOS"
 arch=(x86_64)
-url="git://github.com/PhyTech-R0/dwm-phyOS"
+url="https://github.com/PhyTech-R0/phyOS-dwm/"
 license=('MIT')
 depends=('libxcb' 'libxft-bgra' 'imlib2' 'libconfig')
 makedepends=('git' 'make')
@@ -12,8 +12,11 @@ optdepends=('fonts-phyOS' 'dmenu-phyOS' 'st-phyOS')
 provides=("dwm" "dwmblocks")
 conflicts=("dwm" "dwmblocks")
 options=('zipman')
-source=('git+https://github.com/PhyTech-R0/phyOS-dwm')
-md5sums=('SKIP')
+
+
+prepare() {
+  git clone $url --depth 1 -b $pkgver
+}
 
 build() {
 	cd "$pkgname"
