@@ -1,0 +1,24 @@
+# Maintainer: Arda Atci <arda@phytech.io>
+pkgname=phyOS-cala-config
+_destname="/etc/calamares"
+_licensedir="/usr/share/phyOS/licenses/"
+pkgver=1.0
+pkgrel=0
+pkgdesc="calamares config for phyOS"
+arch=('any')
+url="https://github.com/phytech-r0/${pkgname}"
+license=('GPL3')
+makedepends=('git')
+depends=()
+conflicts=("phyOS-cala-config")
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+https://github.com/phytech-r0/${pkgname}.git")
+sha256sums=('SKIP')
+
+package() {
+	mkdir -p "${pkgdir}${_licensedir}${pkgname}"
+	mv "${srcdir}/${pkgname}/"LICENSE "${pkgdir}${_licensedir}${pkgname}/LICENSE"
+	mkdir -p "${pkgdir}${_destname}"
+	cp -r "${srcdir}/${pkgname}/calamares/"* "${pkgdir}${_destname}"
+}
