@@ -1,0 +1,29 @@
+# Maintainer: Arda Atci <arda@phytech.io>
+pkgname=phyOS-systemd-services
+_destname1="/usr/share/phyos/"
+_destname2="/etc/systemd/system/"
+_destname3="/etc/udev/rules.d/"
+_licensedir="/usr/share/phyOS/licenses/"
+pkgver=1.0
+pkgrel=0
+pkgdesc="phyOS systemd services"
+arch=('any')
+url="https://github.com/phytech-r0/phyOS-systemd-services"
+license=('GPL3')
+makedepends=('git')
+conflicts=("phyOS-systemd-services")
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+https://github.com/phytech-r0/${pkgname}.git")
+sha256sums=('SKIP')
+package() {
+	install -dm755 ${pkgdir}${_licensedir}${pkgname}
+	install -m644  ${srcdir}/${pkgname}/LICENSE ${pkgdir}${_licensedir}${pkgname}
+
+	install -dm755 ${pkgdir}${_destname1}
+	install -dm755 ${pkgdir}${_destname2}
+	install -dm755 ${pkgdir}${_destname3}
+	cp -r  ${srcdir}/${pkgname}${_destname1}* ${pkgdir}${_destname1}
+	cp -r  ${srcdir}/${pkgname}${_destname2}* ${pkgdir}${_destname2}
+	cp -r  ${srcdir}/${pkgname}${_destname3}* ${pkgdir}${_destname3}
+}
