@@ -1,7 +1,7 @@
 # Maintainer: Arda Atci <arda@phytech.io>
 
 pkgname=phyOS-fonts
-pkgver=1
+pkgver=1.1
 pkgrel=1
 pkgdesc="PhyOS system fonts"
 arch=(any)
@@ -14,5 +14,4 @@ package() {
   cd "$pkgname"
   install -dm 755 "${pkgdir}"/usr/share/fonts/TTF
   install -Dm644 *.ttf "$pkgdir"/usr/share/fonts/TTF
-  install -Dm644 *.otf "$pkgdir"/usr/share/fonts/TTF
 }
