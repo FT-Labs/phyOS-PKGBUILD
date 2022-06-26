@@ -20,6 +20,7 @@ prepare() {
 
 build() {
 	cd "$pkgname"
+    [[ -f "$HOME/.config/phyos/dwm/keys.h" ]] && yes | cp "$HOME/.config/phyos/dwm/keys.h" ./
 	make
 }
 
