@@ -1,6 +1,6 @@
 # Maintainer: Arda Atci<arda@phytech.io>
 pkgname=phyOS-dwm
-pkgver=1.1.4
+pkgver=1.1.5
 pkgrel=0
 pkgdesc="dwm build for phyOS"
 arch=(x86_64)
