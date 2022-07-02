@@ -3,6 +3,7 @@ pkgname=phyOS-base-themes
 _destname1="/usr/share/themes/"
 _destname2="/usr/share/icons/"
 _destname3="/usr/share/wallpapers/"
+_destname4="/usr/share/phyos/jgmenu/"
 _licensedir="/usr/share/phyOS/licenses/"
 pkgver=1.0
 pkgrel=0
@@ -23,7 +24,9 @@ package() {
 	install -dm755 ${pkgdir}${_destname1}
 	install -dm755 ${pkgdir}${_destname2}
 	install -dm755 ${pkgdir}${_destname3}
+	install -dm755 ${pkgdir}${_destname4}
 	cp -r  ${srcdir}/${pkgname}${_destname1}* ${pkgdir}${_destname1}
 	cp -r  ${srcdir}/${pkgname}${_destname2}* ${pkgdir}${_destname2}
 	cp -r  ${srcdir}/${pkgname}${_destname3}* ${pkgdir}${_destname3}
+	cp -r  ${srcdir}/${pkgname}${_destname4}* ${pkgdir}${_destname4}
 }
