@@ -1,11 +1,14 @@
 # Maintainer: Johannes Löthberg <johannes@kyriasis.com>
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 # Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
-# Contributor: Arda Atci <arda@phytech.io>
+
+# Fork Maintainer: Arda Atci <arda@ftlabs.tech>
+# Fork Maintainer: Bora Pocan <bora@ftlabs.tech>
+# Fork Maintainer: Alp Duman <alp@ftlabs.tech>
 
 pkgname=phyOS-dunst
-pkgver=1.7.4
-pkgrel=1
+pkgver=1.9.0
+pkgrel=0
 pkgdesc="Modified (dunst) dynamic notification-daemon for phyOS"
 url="https://dunst-project.org/"
 arch=('x86_64')
