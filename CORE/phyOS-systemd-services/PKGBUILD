@@ -1,12 +1,13 @@
-# Maintainer: Arda Atci <arda@phytech.io>
+# Maintainer: Alp Duman <alp@ftlabs.tech>
+# Maintainer: Arda Atci <arda@ftlabs.tech>
 pkgname=phyOS-systemd-services
 _destname1="/usr/share/phyos/"
 _destname2="/etc/systemd/system/"
 _destname2_1="/etc/systemd/user/"
 _destname3="/etc/udev/rules.d/"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=1.1
-pkgrel=2
+pkgver=1.2
+pkgrel=0
 pkgdesc="phyOS systemd services"
 arch=('any')
 url="https://github.com/phytech-r0/phyOS-systemd-services"
