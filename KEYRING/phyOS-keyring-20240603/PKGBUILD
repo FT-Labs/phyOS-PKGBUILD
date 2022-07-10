@@ -1,0 +1,46 @@
+# Based on the file created for Arch Linux by:
+# Pierre Schmitz <pierre@archlinux.de>
+
+pkgname=phyOS-keyring
+pkgver=20240603
+pkgrel=0
+pkgdesc='phyOS GPG keyring'
+arch=('any')
+url='http://ftlabs.tech'
+license=('GPL')
+source=('Makefile'
+        'phyOS.gpg'
+        'phyOS-revoked'
+        'phyOS-trusted')
+
+sha256sums=('f17aea302ef7a3ac269418208e4867905341b6fe2f1bebbb3019f0e9eebe92ae'
+            '32c08471d0de238f7b51555cafd75c06a0408d168b04812abcf6f478a06d2444'
+            'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+            'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855')
+
+validpgpkeys=('F8FFF8A536F0F864F2BE3244964FD85861C858D7')  # Arda Atci
+
+package() {
+	cd "${srcdir}"
+	make PREFIX=/usr DESTDIR=${pkgdir} install
+}
+
+post_upgrade() {
+	if usr/bin/pacman-key -l >/dev/null 2>&1; then
+		usr/bin/pacman-key --populate phyOS
+
+		#Arda Atci
+		#pacman-key --recv-keys 964FD85861C858D7
+		pacman-key --lsign-key 964FD85861C858D7
+
+	else
+		echo "#### Run \`pacman-key --init\` to set up your pacman keyring. ####"
+		echo "#### Then run \`pacman-key --populate phyOS\` to install the phyOS keyring. ####"
+	fi
+}
+
+post_install() {
+	if [ -x usr/bin/pacman-key ]; then
+		post_upgrade
+	fi
+}
