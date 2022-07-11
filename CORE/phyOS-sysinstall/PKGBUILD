@@ -2,7 +2,6 @@
 pkgname=phyOS-sysinstall
 _destname1="/etc/xdg/autostart"
 _destname2="/usr/local/bin/"
-_destname3="/usr/share/phyos/"
 _licensedir="/usr/share/phyOS/licenses/"
 pkgver=1.2
 pkgrel=0
