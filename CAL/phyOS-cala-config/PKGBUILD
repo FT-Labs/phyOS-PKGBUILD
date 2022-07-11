@@ -6,14 +6,14 @@ pkgver=1.0
 pkgrel=02
 pkgdesc="calamares config for phyOS"
 arch=('any')
-url="https://github.com/phytech-r0/${pkgname}"
+url="https://github.com/FT-Labs/${pkgname}"
 license=('GPL3')
 makedepends=('git')
 depends=()
 conflicts=("phyOS-cala-config")
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=(${pkgname}::"git+https://github.com/phytech-r0/${pkgname}.git")
+source=(${pkgname}::"git+https://github.com/FT-Labs/${pkgname}.git")
 sha256sums=('SKIP')
 
 package() {
