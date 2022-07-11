@@ -1,9 +1,9 @@
-# Maintainer: Arda Atci <arda@phytech.io>
+# Maintainer: Arda Atci <arda@ftlabs.tech>
 pkgname=phyOS-sysconf
 _destname1="/etc"
 _destname2="/usr"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=1.0
+pkgver=1.1
 pkgrel=0
 pkgdesc="Configuration files for phyOS"
 arch=('x86_64')

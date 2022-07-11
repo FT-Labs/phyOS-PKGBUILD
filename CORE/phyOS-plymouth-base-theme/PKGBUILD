@@ -1,5 +1,5 @@
-# Maintainer: Arda Atci <arda@ftlabs.tech>
-pkgname=phyOS-sddm-default
+# Maintainer: Arda Atci <arda@phytech.io>
+pkgname=phyOS-plymouth-base-theme
 _destname1="/usr"
 _licensedir="/usr/share/phyOS/licenses/"
 pkgver=1.0
@@ -8,7 +8,6 @@ pkgdesc="Default sddm theme for phyOS"
 arch=('any')
 url="https://github.com/phytech-r0/${pkgname}"
 license=('GPL3')
-depends=('qt5-quickcontrols2')
 makedepends=('git')
 options=(!strip !emptydirs)
 replaces=()

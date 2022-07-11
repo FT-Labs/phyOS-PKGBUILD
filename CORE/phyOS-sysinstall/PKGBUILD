@@ -1,10 +1,10 @@
-# Maintainer: Arda Atci <arda@phytech.io>
+# Maintainer: Arda Atci <arda@ftlabs.tech>
 pkgname=phyOS-sysinstall
 _destname1="/etc/xdg/autostart"
 _destname2="/usr/local/bin/"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=1.0
-pkgrel=1
+pkgver=1.1
+pkgrel=0
 pkgdesc="Installation files for phyOS"
 arch=('any')
 url="https://github.com/phytech-r0/phyOS-sysinstall"
