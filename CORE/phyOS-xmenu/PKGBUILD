@@ -4,14 +4,14 @@ pkgver=1
 pkgrel=1
 pkgdesc="xmenu build for phyOS"
 arch=(x86_64)
-url="git://github.com/PhyTech-R0/xmenu-phyOS"
+url="git://github.com/FT-Labs/xmenu-phyOS"
 license=('MIT')
 depends=('imlib2' 'libxft-bgra' 'libxinerama' 'freetype2' 'libxcb' 'fontconfig')
 makedepends=('git' 'make')
 provides=("xmenu")
 conflicts=("xmenu")
 options=('zipman')
-source=('git+https://github.com/PhyTech-R0/phyOS-xmenu')
+source=('git+https://github.com/FT-Labs/phyOS-xmenu')
 md5sums=('SKIP')
 
 build() {

@@ -10,13 +10,13 @@ pkgver=1.2
 pkgrel=0
 pkgdesc="phyOS systemd services"
 arch=('any')
-url="https://github.com/phytech-r0/phyOS-systemd-services"
+url="https://github.com/FT-Labs/phyOS-systemd-services"
 license=('GPL3')
 makedepends=('git')
 conflicts=("phyOS-systemd-services")
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=(${pkgname}::"git+https://github.com/phytech-r0/${pkgname}.git")
+source=(${pkgname}::"git+https://github.com/FT-Labs/${pkgname}.git")
 sha256sums=('SKIP')
 package() {
 	install -dm755 ${pkgdir}${_licensedir}${pkgname}

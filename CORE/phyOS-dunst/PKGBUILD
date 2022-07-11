@@ -20,7 +20,7 @@ optdepends=('libnotify: dunstify')
 backup=('etc/dunst/dunstrc')
 provides=('notification-daemon')
 options=('debug')
-source=("git+https://github.com/PhyTech-R0/phyOS-dunst")
+source=("git+https://github.com/FT-Labs/phyOS-dunst")
 md5sums=('SKIP')
 
 build() {

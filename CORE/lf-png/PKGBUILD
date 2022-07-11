@@ -12,7 +12,7 @@ depends=('glibc' 'ueberzug' 'ffmpegthumbnailer' 'imagemagick' 'poppler' 'wkhtmlt
 makedepends=('go' 'wget')
 arch=('aarch64' 'armv7h' 'i686' 'x86_64')
 url="https://github.com/gokcehan/lf"
-_urllfscript="https://raw.githubusercontent.com/PhyTech-R0/dotfiles/master/.local/bin/scripts/lfrun"
+_urllfscript="https://raw.githubusercontent.com/FT-Labs/dotfiles/master/.local/bin/scripts/lfrun"
 source=("$_pkgname-r$pkgver.tar.gz::https://github.com/gokcehan/$_pkgname/archive/r$pkgver.tar.gz")
 sha256sums=('cdd132e33387423ef9f9448e21d3f1e5c9a5319b34fdfb53cb5f49351ebac005')
 

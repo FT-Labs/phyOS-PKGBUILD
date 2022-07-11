@@ -7,7 +7,7 @@ pkgdesc="PhyOS system fonts"
 arch=(any)
 depends=(fontconfig xorg-font-util)
 conflicts=()
-source=("git+https://github.com/PhyTech-R0/phyOS-fonts")
+source=("git+https://github.com/FT-Labs/phyOS-fonts")
 md5sums=('SKIP')
 
 package() {

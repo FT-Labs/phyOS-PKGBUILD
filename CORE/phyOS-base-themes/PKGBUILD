@@ -9,13 +9,13 @@ pkgver=1.0
 pkgrel=0
 pkgdesc="phyOS base theme package"
 arch=('any')
-url="https://github.com/phytech-r0/phyOS-base-themes"
+url="https://github.com/FT-Labs/phyOS-base-themes"
 license=('GPL3')
 makedepends=('git')
 conflicts=("phyOS-base-themes")
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=(${pkgname}::"git+https://github.com/phytech-r0/${pkgname}.git")
+source=(${pkgname}::"git+https://github.com/FT-Labs/${pkgname}.git")
 sha256sums=('SKIP')
 package() {
 	install -dm755 ${pkgdir}${_licensedir}${pkgname}
