@@ -3,7 +3,7 @@
 
 pkgname=phyOS-keyring
 pkgver=20240603
-pkgrel=0
+pkgrel=1
 pkgdesc='phyOS GPG keyring'
 arch=('any')
 url='http://ftlabs.tech'
