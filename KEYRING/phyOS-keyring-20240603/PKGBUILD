@@ -30,7 +30,7 @@ post_upgrade() {
 		usr/bin/pacman-key --populate phyOS
 
 		#Arda Atci
-		#pacman-key --recv-keys 964FD85861C858D7
+		pacman-key --recv-keys 964FD85861C858D7
 		pacman-key --lsign-key 964FD85861C858D7
 
 	else
