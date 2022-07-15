@@ -3,7 +3,7 @@
 
 pkgname=phyOS-keyring
 pkgver=20240603
-pkgrel=1
+pkgrel=2
 pkgdesc='phyOS GPG keyring'
 arch=('any')
 url='http://ftlabs.tech'
@@ -13,12 +13,13 @@ source=('Makefile'
         'phyOS-revoked'
         'phyOS-trusted')
 
+
+validpgpkeys=('F8FFF8A536F0F864F2BE3244964FD85861C858D7')  # Arda Atci
+
 sha256sums=('f17aea302ef7a3ac269418208e4867905341b6fe2f1bebbb3019f0e9eebe92ae'
             '32c08471d0de238f7b51555cafd75c06a0408d168b04812abcf6f478a06d2444'
             'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
-            'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855')
-
-validpgpkeys=('F8FFF8A536F0F864F2BE3244964FD85861C858D7')  # Arda Atci
+            'd2540c6c9e2641cdfffbfbc54474d337e1ab5a1c41a9aeb0805008899075a56a')
 
 package() {
 	cd "${srcdir}"

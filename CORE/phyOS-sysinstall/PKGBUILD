@@ -2,9 +2,8 @@
 pkgname=phyOS-sysinstall
 _destname1="/etc/xdg/autostart"
 _destname2="/usr/local/bin/"
-_destname3="/usr/lib/systemd/system/"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=1.3
+pkgver=1.4
 pkgrel=0
 pkgdesc="Installation files for phyOS"
 arch=('any')
@@ -25,22 +24,4 @@ package() {
 
   install -dm755 "$pkgdir$_destname2"
   cp -r "$srcdir/$pkgname/$_destname2/"* "$pkgdir$_destname2"
-
-  install -dm755 "$pkgdir$_destname3"
-  cp -r "$srcdir/$pkgname/$_destname3/"* "$pkgdir$_destname3"
-
-}
-
-post_install() {
-	systemctl enable arcolinux-graphical-target.service
-	systemctl start arcolinux-graphical-target.service
-}
-
-post_upgrade() {
-	systemctl enable arcolinux-graphical-target.service
-	systemctl start arcolinux-graphical-target.service
-}
-
-pre_remove() {
-	systemctl disable arcolinux-graphical-target.service
 }
