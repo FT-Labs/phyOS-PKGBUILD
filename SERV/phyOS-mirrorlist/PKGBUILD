@@ -14,15 +14,14 @@ depends=()
 provides=("${pkgname}")
 source=('phyOS-mirrorlist'
         'LICENSE')
-backup=(etc/pacman.d/phyOS-mirrorlist)
 
 sha256sums=('01e9590a0d25d0f513e3d3b0c1558613fcc7f9b059ef7d9eb488cf4864964e58'
             'e1c0ad728983d8a57335e52cf1064f1affd1d454173d8cebd3ed8b4a72b48704')
 
 package() {
-	install -dm755 ${srcdir}${_licensedir}${pkgname}
-	install -m644  LICENSE ${srcdir}${_licensedir}${pkgname}
+	install -dm755 ${pkgdir}${_licensedir}${pkgname}
+	install -m644  LICENSE ${pkgdir}${_licensedir}${pkgname}
 
-	install -dm755 ${srcdir}${_destname1}
-	install -m644  phyOS-mirrorlist ${srcdir}${_destname1}
+	install -dm755 ${pkgdir}${_destname1}
+	install -Dm644  ${pkgname} ${pkgdir}${_destname1}/${pkgname}
 }
