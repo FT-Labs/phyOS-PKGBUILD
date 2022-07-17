@@ -1,4 +1,4 @@
-# Maintainer: Arda Atci <arda@phytech.io>
+# Maintainer: Arda Atci <arda@ftlabs.tech>
 pkgname=phyOS-base-themes
 _destname1="/usr/share/themes/"
 _destname2="/usr/share/icons/"
