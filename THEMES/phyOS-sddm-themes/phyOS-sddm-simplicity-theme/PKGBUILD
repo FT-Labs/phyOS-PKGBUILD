@@ -1,5 +1,6 @@
 # Maintainer: Arda Atci <arda@ftlabs.tech>
-pkgname=phyOS-sddm-default
+#Maintainer: Alp Duman <alp@ftlabs.tech>
+pkgname=phyOS-sddm-simplicity-theme
 _destname1="/usr"
 _licensedir="/usr/share/phyOS/licenses/"
 pkgver=1.0
