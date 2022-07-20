@@ -3,7 +3,7 @@
 
 pkgname=phyOS-keyring
 pkgver=20240603
-pkgrel=2
+pkgrel=3
 pkgdesc='phyOS GPG keyring'
 arch=('any')
 url='http://ftlabs.tech'
@@ -14,12 +14,13 @@ source=('Makefile'
         'phyOS-trusted')
 
 
-validpgpkeys=('F8FFF8A536F0F864F2BE3244964FD85861C858D7')  # Arda Atci
+validpgpkeys=('F8FFF8A536F0F864F2BE3244964FD85861C858D7'   # Arda Atci
+              'DF7A8F8E89F5EB5BACAE9456C8766AA76781FE80')  # Alp Duman
 
 sha256sums=('f17aea302ef7a3ac269418208e4867905341b6fe2f1bebbb3019f0e9eebe92ae'
-            '32c08471d0de238f7b51555cafd75c06a0408d168b04812abcf6f478a06d2444'
+            '02271bfe97c7846645002f326cf643e3910cfe9e39fa3586bb4110fa8f079056'
             'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
-            'd2540c6c9e2641cdfffbfbc54474d337e1ab5a1c41a9aeb0805008899075a56a')
+            'd10c388263cd95879d6e95ff352fb992e10b05f09624725bd966c978b844caa4')
 
 package() {
 	cd "${srcdir}"
@@ -33,6 +34,10 @@ post_upgrade() {
 		#Arda Atci
 		pacman-key --recv-keys 964FD85861C858D7
 		pacman-key --lsign-key 964FD85861C858D7
+
+        #Alp Duman
+		pacman-key --recv-keys C8766AA76781FE80
+		pacman-key --lsign-key C8766AA76781FE80
 
 	else
 		echo "#### Run \`pacman-key --init\` to set up your pacman keyring. ####"
