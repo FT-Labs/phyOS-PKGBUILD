@@ -1,7 +1,6 @@
 # Maintainer: Alp Duman <alp@ftlabs.tech>
 # Maintainer: Arda Atci <arda@ftlabs.tech>
 pkgname=phyOS-systemd-services
-_destname1="/usr/share/phyos/"
 _destname2="/etc/systemd/system/"
 _destname2_1="/etc/systemd/user/"
 _destname3="/etc/udev/rules.d/"
@@ -23,11 +22,9 @@ package() {
 	install -dm755 ${pkgdir}${_licensedir}${pkgname}
 	install -m644  ${srcdir}/${pkgname}/LICENSE ${pkgdir}${_licensedir}${pkgname}
 
-	install -dm755 ${pkgdir}${_destname1}
 	install -dm755 ${pkgdir}${_destname2}
 	install -dm755 ${pkgdir}${_destname2_1}
 	install -dm755 ${pkgdir}${_destname3}
-	cp -r  ${srcdir}/${pkgname}${_destname1}* ${pkgdir}${_destname1}
 	cp -r  ${srcdir}/${pkgname}${_destname2}* ${pkgdir}${_destname2}
 	cp -r  ${srcdir}/${pkgname}${_destname2_1}* ${pkgdir}${_destname2_1}
 	cp -r  ${srcdir}/${pkgname}${_destname3}* ${pkgdir}${_destname3}

@@ -1,8 +1,10 @@
 # Maintainer: Arda Atci <arda@ftlabs.tech>
 
 pkgname=phyOS-fonts
-pkgver=1.2
+pkgver=1.3
 pkgrel=0
+_destname1=/usr/share/fonts
+_destname2=/etc/fonts
 pkgdesc="PhyOS system fonts"
 arch=(any)
 depends=(fontconfig xorg-font-util)
@@ -12,8 +14,9 @@ md5sums=('SKIP')
 
 package() {
   cd "$pkgname"
-  install -dm 755 "${pkgdir}"/usr/share/fonts/TTF
-  install -dm 755 "${pkgdir}"/usr/share/fonts/OTF
-  install -Dm644 *.ttf "$pkgdir"/usr/share/fonts/TTF
-  install -Dm644 *.otf "$pkgdir"/usr/share/fonts/OTF
+  install -dm 755 "${pkgdir}${_destname1}"/TTF
+  install -dm 755 "${pkgdir}${_destname1}"/OTF
+  install -Dm644 *.ttf "${pkgdir}${_destname1}"/TTF
+  install -Dm644 *.otf "${pkgdir}${_destname1}"/OTF
+  install -Dm644 local.conf "${pkgdir}${_destname2}"
 }
