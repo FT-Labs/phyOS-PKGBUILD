@@ -2,7 +2,7 @@
 
 pkgname=phyOS-fonts
 pkgver=1.3
-pkgrel=0
+pkgrel=01
 _destname1=/usr/share/fonts
 _destname2=/etc/fonts
 pkgdesc="PhyOS system fonts"
@@ -18,5 +18,5 @@ package() {
   install -dm 755 "${pkgdir}${_destname1}"/OTF
   install -Dm644 *.ttf "${pkgdir}${_destname1}"/TTF
   install -Dm644 *.otf "${pkgdir}${_destname1}"/OTF
-  install -Dm644 local.conf "${pkgdir}${_destname2}"
+  install -Dm644 local.conf "${pkgdir}${_destname2}"/local.conf
 }
