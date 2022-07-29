@@ -2,7 +2,7 @@
 
 pkgname=phyOS-fonts
 pkgver=1.3
-pkgrel=01
+pkgrel=02
 _destname1=/usr/share/fonts
 _destname2=/etc/fonts
 pkgdesc="PhyOS system fonts"
