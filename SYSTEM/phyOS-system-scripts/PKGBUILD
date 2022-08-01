@@ -2,7 +2,7 @@
 pkgname=phyOS-system-scripts
 _destname1="/usr"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=1.8
+pkgver=1.9
 pkgrel=02
 pkgdesc="Scripts & utilities for phyOS"
 arch=('x86_64')
