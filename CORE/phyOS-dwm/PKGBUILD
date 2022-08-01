@@ -1,7 +1,7 @@
 # Maintainer: Arda Atci<arda@ftlabs.tech>
 pkgname=phyOS-dwm
 pkgver=1.2.0
-pkgrel=02
+pkgrel=03
 pkgdesc="dwm build for phyOS"
 arch=(x86_64)
 url="https://github.com/FT-Labs/phyOS-dwm/"
@@ -27,4 +27,8 @@ build() {
 package() {
     cd "$pkgname"
 	make PREFIX=/usr DESTDIR="$pkgdir/" install
+}
+
+post_install() {
+    /usr/share/phyos/util-scripts/pOS-powermenu restart
 }
