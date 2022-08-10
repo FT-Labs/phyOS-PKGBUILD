@@ -15,7 +15,8 @@ options=('zipman')
 
 
 prepare() {
-  git clone $url --depth 1 -b $pkgver
+  # git clone $url --depth 1 -b $pkgver THIS IS FOR RELEASES
+  git clone $url --depth 1 -b master # THIS IS FOR phyp dwm
 }
 
 build() {
