@@ -8,10 +8,10 @@
 # Contributor: Valère Monseur <valere dot monseur at ymail dot com>
 
 _forkname=FT-Labs
-pkgname=picom-animations-git
+pkgname=phyOS-picom
 _gitname=picom
 pkgver=1.0
-pkgrel=0
+pkgrel=01
 pkgdesc="X compositor (fork of compton) (git-version; animation fork)"
 arch=(i686 x86_64)
 url="https://github.com/${_forkname}/${_gitname}"
@@ -24,7 +24,7 @@ optdepends=('dbus:          To control picom via D-Bus'
             'xorg-xprop:    For picom-trans'
             'python:        For picom-convgen.py')
 provides=('compton' 'compton-git' 'picom')
-conflicts=('compton' 'compton-git' 'picom')
+conflicts=('compton' 'compton-git' 'picom' 'picom-animations-git')
 replaces=('compton-git')
 source=(git+"https://github.com/${_forkname}/${_gitname}.git")
 sha256sums=("SKIP")

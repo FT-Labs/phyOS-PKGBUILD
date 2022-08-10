@@ -1,12 +1,12 @@
 # Maintainer: Arda Atci<arda@ftlabs.tech>
 pkgname=phyOS-dwm
 pkgver=1.2.3
-pkgrel=01
+pkgrel=02
 pkgdesc="dwm build for phyOS"
 arch=(x86_64)
 url="https://github.com/FT-Labs/phyOS-dwm/"
 license=('MIT')
-depends=('libxcb' 'libxft-bgra' 'imlib2' 'libconfig' 'phyOS-system-scripts' 'phyOS-sysconf')
+depends=('libxcb' 'libxft-bgra' 'imlib2' 'libconfig' 'phyOS-system-scripts' 'phyOS-sysconf' 'phyOS-picom')
 makedepends=('git' 'make')
 optdepends=('fonts-phyOS' 'dmenu-phyOS' 'st-phyOS')
 provides=("dwm" "dwmblocks")
@@ -15,8 +15,12 @@ options=('zipman')
 
 
 prepare() {
+<<<<<<< HEAD
   # git clone $url --depth 1 -b $pkgver THIS IS FOR RELEASES
   git clone $url --depth 1 -b master # THIS IS FOR phyp dwm
+=======
+  git clone $url --depth 1 -b master
+>>>>>>> 091408e (alias vim=nvim, small fix on phyup)
 }
 
 build() {
