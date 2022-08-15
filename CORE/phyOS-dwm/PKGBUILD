@@ -1,7 +1,7 @@
 # Maintainer: Arda Atci<arda@ftlabs.tech>
 pkgname=phyOS-dwm
-pkgver=1.2.3
-pkgrel=02
+pkgver=1.2.4
+pkgrel=0
 pkgdesc="dwm build for phyOS"
 arch=(x86_64)
 url="https://github.com/FT-Labs/phyOS-dwm/"
@@ -15,12 +15,7 @@ options=('zipman')
 
 
 prepare() {
-<<<<<<< HEAD
-  # git clone $url --depth 1 -b $pkgver THIS IS FOR RELEASES
-  git clone $url --depth 1 -b master # THIS IS FOR phyp dwm
-=======
-  git clone $url --depth 1 -b master
->>>>>>> 091408e (alias vim=nvim, small fix on phyup)
+  git clone $url --depth 1 -b $pkgver
 }
 
 build() {

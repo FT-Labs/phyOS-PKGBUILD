@@ -10,7 +10,7 @@
 _forkname=FT-Labs
 pkgname=phyOS-picom
 _gitname=picom
-pkgver=1.0
+pkgver=1.2
 pkgrel=01
 pkgdesc="X compositor (fork of compton) (git-version; animation fork)"
 arch=(i686 x86_64)
