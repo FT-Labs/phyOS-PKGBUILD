@@ -2,12 +2,13 @@
 pkgname=phyOS-system-scripts
 _destname1="/usr"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=2.4
-pkgrel=04
+pkgver=2.6
+pkgrel=0
 pkgdesc="Scripts & utilities for phyOS"
 arch=('x86_64')
 url="https://github.com/FT-Labs/$pkgname"
 license=('GPL3')
+depends=('gum')
 makedepends=('git')
 conflicts=("phyOS-system-scripts")
 provides=("${pkgname}")
