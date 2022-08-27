@@ -1,7 +1,7 @@
 # Maintainer: Arda Atci<arda@ftlabs.tech>
 pkgname=phyOS-st
 pkgver=0.8.5
-pkgrel=5
+pkgrel=07
 pkgdesc="st build for phyOS"
 arch=(x86_64)
 url="git://git.suckless.org/st"
