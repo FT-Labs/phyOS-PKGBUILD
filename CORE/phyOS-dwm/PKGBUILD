@@ -1,7 +1,7 @@
 # Maintainer: Arda Atci<arda@ftlabs.tech>
 pkgname=phyOS-dwm
-pkgver=1.2.4
-pkgrel=02
+pkgver=1.2.5
+pkgrel=0
 pkgdesc="dwm build for phyOS"
 arch=(x86_64)
 url="https://github.com/FT-Labs/phyOS-dwm/"

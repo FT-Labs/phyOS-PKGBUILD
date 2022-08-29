@@ -1,0 +1,26 @@
+# Maintainer: Arda Atci<arda@ftlabs.tech>
+pkgname=physettings
+pkgver=1.0.0
+pkgrel=01
+pkgdesc="System settings TUI application for phyOS"
+arch=(x86_64)
+url="https://github.com/FT-Labs/physettings/"
+license=('MIT')
+makedepends=('git' 'make' 'go')
+optdepends=('fonts-phyOS' 'st-phyOS')
+provides=("physettings")
+options=('zipman')
+
+prepare() {
+  git clone $url --depth 1 -b master
+}
+
+build() {
+	cd "$pkgname"
+	make
+}
+
+package() {
+    cd "$pkgname"
+	make PREFIX=/usr DESTDIR="$pkgdir/" install
+}
