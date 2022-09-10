@@ -1,6 +1,8 @@
 # Maintainer: Arda Atci<arda@ftlabs.tech>
-pkgname=phyOS-dwm
+pkgname=phyOS-dwm-beta
+_pkgname=phyOS-dwm
 pkgver=1.2.5
+_branch=feature/dynamiclibsettings
 pkgrel=0
 pkgdesc="dwm build for phyOS"
 arch=(x86_64)
@@ -10,24 +12,22 @@ depends=('libxcb' 'libxft-bgra' 'imlib2' 'libconfig' 'phyOS-system-scripts' 'phy
 makedepends=('git' 'make')
 optdepends=('fonts-phyOS' 'dmenu-phyOS' 'st-phyOS')
 provides=("dwm" "dwmblocks")
-conflicts=("dwm" "dwmblocks")
+conflicts=("dwm" "dwmblocks" "phyOS-dwm")
 options=('zipman')
 
-
 prepare() {
-  git clone $url --depth 1 -b $pkgver
+  git clone $url --depth 1 -b $_branch
 }
 
 build() {
-	cd "$pkgname"
-    [[ -f "$HOME/.config/phyos/dwm/keys.h" ]] && yes | cp "$HOME/.config/phyos/dwm/keys.h" ./
+	cd "$_pkgname"
 	make
 }
 
 package() {
-    cd "$pkgname"
+    cd "$_pkgname"
 
 	make PREFIX=/usr DESTDIR="$pkgdir/" install
-
-    cp -f pdwm "${pkgdir}/etc/xdg/pdwm"
+    mkdir -p "${pkgdir}/etc/xdg"
+    cp -rf pdwm "${pkgdir}/etc/xdg/"
 }
