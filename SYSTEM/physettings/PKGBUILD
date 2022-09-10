@@ -1,7 +1,7 @@
 # Maintainer: Arda Atci<arda@ftlabs.tech>
 pkgname=physettings
 pkgver=1.0.1
-pkgrel=0
+pkgrel=01
 pkgdesc="System settings TUI application for phyOS"
 arch=(x86_64)
 url="https://github.com/FT-Labs/physettings/"
