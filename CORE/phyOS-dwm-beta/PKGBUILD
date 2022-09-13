@@ -1,16 +1,16 @@
 # Maintainer: Arda Atci<arda@ftlabs.tech>
 pkgname=phyOS-dwm-beta
 _pkgname=phyOS-dwm
-pkgver=1.2.5
+pkgver=1.2.5_beta
 _branch=feature/dynamiclibsettings
-pkgrel=05
+pkgrel=0
 pkgdesc="dwm build for phyOS"
 arch=(x86_64)
 url="https://github.com/FT-Labs/phyOS-dwm/"
 license=('MIT')
 depends=('libxcb' 'libxft-bgra' 'imlib2' 'libconfig' 'phyOS-system-scripts' 'phyOS-sysconf' 'inotify-tools')
 makedepends=('git' 'make')
-optdepends=('fonts-phyOS' 'dmenu-phyOS' 'st-phyOS' 'phyOS-picom')
+optdepends=('fonts-phyOS' 'dmenu-phyOS' 'st-phyOS' 'phyOS-picom' 'pdwm')
 provides=("dwm" "dwmblocks")
 conflicts=("dwm" "dwmblocks" "phyOS-dwm")
 options=('zipman')

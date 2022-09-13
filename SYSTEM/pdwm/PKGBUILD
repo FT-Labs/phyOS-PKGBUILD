@@ -1,0 +1,20 @@
+# Maintainer: Arda Atci<arda@ftlabs.tech>
+pkgname=pdwm
+pkgver=1.0.0
+pkgrel=01
+pkgdesc="Config editor for phyOS-dwm-beta"
+arch=(x86_64)
+url="https://github.com/FT-Labs/pdwm/"
+license=('MIT')
+makedepends=('git' 'make')
+depends=('python' 'phyOS-simple-term-menu' 'python-tabulate' 'python-pycparser')
+optdepends=('phyOS-dwm-beta')
+provides=("pdwm")
+options=('zipman')
+source=(git+${url})
+sha256sums=('SKIP')
+
+package() {
+    cd "$pkgname"
+	make PREFIX=/usr DESTDIR="$pkgdir/" install
+}
