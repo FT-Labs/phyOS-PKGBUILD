@@ -28,6 +28,4 @@ package() {
     cd "$pkgname"
 
 	make PREFIX=/usr DESTDIR="$pkgdir/" install
-
-    cp -f pdwm "${pkgdir}/etc/xdg/pdwm"
 }
