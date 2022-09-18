@@ -1,0 +1,36 @@
+# Maintainer: Arda Atci<arda@ftlabs.tech>
+pkgname=sos
+pkgver=4.4
+pkgrel=0
+epoch=
+pkgdesc="A unified tool for collecting system logs and other debug information"
+arch=('any')
+url="https://github.com/sosreport/sos"
+license=('GPL2')
+depends=('git' 'python' 'python-six' 'python-lxml')
+makedepends=('python-sphinx')
+checkdepends=('python-nose' 'python-coverage')
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=('etc/sos.conf')
+options=()
+install=
+changelog=
+source=("https://github.com/sosreport/sos/archive/$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+prepare() {
+	cd "$pkgname-$pkgver"
+}
+
+build() {
+	cd "$pkgname-$pkgver"
+	python setup.py build
+}
+
+package() {
+	cd "$pkgname-$pkgver"
+    python setup.py install --root="$pkgdir"
+}

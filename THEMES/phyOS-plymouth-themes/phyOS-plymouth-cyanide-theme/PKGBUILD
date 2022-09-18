@@ -2,7 +2,7 @@
 pkgname=phyOS-plymouth-cyanide-theme
 _destname1="/usr"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=1.1
+pkgver=1.2
 pkgrel=0
 pkgdesc="Default plymouth theme for phyOS"
 arch=('any')
