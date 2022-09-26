@@ -1,0 +1,26 @@
+# Maintainer: Arda Atci<arda@ftlabs.tech>
+pkgname=supergfxctl
+pkgver=4.0.5
+pkgrel=0
+pkgdesc="Switching between gpu's for hybrid (prime) laptops"
+arch=(x86_64)
+url="https://gitlab.com/asus-linux/supergfxctl/-/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz"
+license=('MPL2')
+makedepends=('git' 'wget' 'make' 'rust' 'cargo')
+provides=("supergfxctl")
+options=('zipman')
+
+prepare() {
+    wget ${url}
+    tar -xvf *.tar.gz
+}
+
+build() {
+	cd "$pkgname-$pkgver"
+	make
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+	make PREFIX=/usr DESTDIR="$pkgdir/" install
+}

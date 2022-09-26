@@ -1,0 +1,26 @@
+# Maintainer: Arda Atci<arda@ftlabs.tech>
+pkgname=asusctl
+pkgver=4.4.0
+pkgrel=0
+pkgdesc="Asus control center for asus laptops (unofficial)"
+arch=(x86_64)
+url="https://gitlab.com/asus-linux/${pkgname}/-/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz"
+license=('MPL2')
+makedepends=('git' 'wget' 'make' 'rust' 'cargo')
+provides=("asusctl")
+options=('zipman')
+
+prepare() {
+    wget ${url}
+    tar -xvf *.tar.gz
+}
+
+build() {
+	cd "$pkgname-$pkgver"
+	make
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+	make PREFIX=/usr DESTDIR="$pkgdir/" install
+}
