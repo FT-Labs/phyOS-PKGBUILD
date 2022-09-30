@@ -1,0 +1,33 @@
+# Maintainer: Arda Atci<arda@ftlabs.tech>
+pkgname=pdwm
+pkgver=1.3
+_branch=pdwm
+pkgrel=0
+pkgdesc="pdwm window manager for phyOS"
+arch=(x86_64)
+url="https://github.com/FT-Labs/pdwm/"
+license=('MIT')
+depends=('libxcb' 'libxft-bgra' 'imlib2' 'libconfig' 'phyOS-system-scripts' 'phyOS-sysconf' 'pdwm')
+replaces=('phyOS-dwm-beta')
+makedepends=('git' 'make')
+optdepends=('fonts-phyOS' 'dmenu-phyOS' 'st-phyOS' 'phyOS-picom')
+provides=("pdwm" "dwmblocks")
+conflicts=("dwmblocks" "phyOS-dwm")
+options=('zipman')
+
+prepare() {
+  git clone $url --depth 1 -b $_branch
+}
+
+build() {
+	cd "$pkgname"
+	make
+}
+
+package() {
+    cd "$pkgname"
+
+	make PREFIX=/usr DESTDIR="$pkgdir/" install
+    mkdir -p "${pkgdir}/etc/xdg"
+    cp -rf pdwmc "${pkgdir}/etc/xdg/pdwm"
+}

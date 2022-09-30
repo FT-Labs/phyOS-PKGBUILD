@@ -1,0 +1,32 @@
+# Maintainer: Arda Atci<arda@ftlabs.tech>
+pkgname=libcglm
+_pkgname=cglm
+pkgver=0.8.5
+pkgrel=0
+epoch=
+pkgdesc="C advanced mathematics library (glm)"
+arch=('any')
+url="https://github.com/recp/${_pkgname}"
+license=('MIT')
+depends=('git' 'gcc')
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+options=()
+install=
+changelog=
+source=("https://github.com/recp/cglm/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+	cd "$_pkgname-$pkgver"
+    /bin/sh autogen.sh
+    ./configure --with-pkgconfigdir=${pkgdir}/usr/lib/pkgconfig --prefix=${pkgdir}/usr
+}
+
+package() {
+	cd "$_pkgname-$pkgver"
+    make
+    make install
+}

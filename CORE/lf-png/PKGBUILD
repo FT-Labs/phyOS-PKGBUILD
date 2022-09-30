@@ -1,11 +1,10 @@
-# Maintainer: Bora Pocan <bora@ftlabs.tech>
 # Maintainer: Arda Atci <arda@ftlabs.tech>
 # Maintainer: Alp Duman <alp@ftlabs.tech>
 
 pkgname=lf-png
 _pkgname=lf
 pkgver=27
-pkgrel=0
+pkgrel=2
 license=('MIT')
 pkgdesc="A terminal file manager inspired by ranger written in Go, with image support"
 depends=('glibc' 'ueberzug' 'ffmpegthumbnailer' 'imagemagick' 'poppler' 'wkhtmltopdf')
