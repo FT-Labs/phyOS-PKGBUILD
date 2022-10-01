@@ -1,7 +1,7 @@
 # Maintainer: Arda Atci<arda@ftlabs.tech>
 pkgname=phyOS-dwm
 pkgver=1.2.5
-pkgrel=01
+pkgrel=02
 pkgdesc="dwm build for phyOS"
 arch=(x86_64)
 url="https://github.com/FT-Labs/phyOS-dwm/"
@@ -9,13 +9,13 @@ license=('MIT')
 depends=('libxcb' 'libxft-bgra' 'imlib2' 'libconfig' 'phyOS-system-scripts' 'phyOS-sysconf' 'phyOS-picom')
 makedepends=('git' 'make')
 optdepends=('fonts-phyOS' 'dmenu-phyOS' 'st-phyOS')
-provides=("dwm" "dwmblocks")
-conflicts=("dwm" "dwmblocks")
+provides=("dwm")
+conflicts=("dwm")
 options=('zipman')
 
 
 prepare() {
-  git clone $url --depth 1 -b $pkgver
+  git clone $url --depth 1 -b master
 }
 
 build() {
@@ -27,5 +27,7 @@ build() {
 package() {
     cd "$pkgname"
 
-	make PREFIX=/usr DESTDIR="$pkgdir/" install
+    mkdir -p $pkgdir/usr/share/xsessions
+    cp -f patches/dwm.desktop $pkgdir/usr/share/xsessions
+	make PREFIX=/usr/local MANPREFIX=/usr/local/man DESTDIR="$pkgdir/" install
 }
