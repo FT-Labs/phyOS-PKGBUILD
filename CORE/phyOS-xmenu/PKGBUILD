@@ -1,12 +1,12 @@
 # Maintainer: Arda Atci<arda@ftlabs.tech>
 pkgname=phyOS-xmenu
 pkgver=1
-pkgrel=1
+pkgrel=2
 pkgdesc="xmenu build for phyOS"
 arch=(x86_64)
 url="git://github.com/FT-Labs/xmenu-phyOS"
 license=('MIT')
-depends=('imlib2' 'libxft-bgra' 'libxinerama' 'freetype2' 'libxcb' 'fontconfig')
+depends=('imlib2' 'libxft' 'libxinerama' 'freetype2' 'libxcb' 'fontconfig')
 makedepends=('git' 'make')
 provides=("xmenu")
 conflicts=("xmenu")

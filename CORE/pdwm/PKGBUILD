@@ -2,12 +2,12 @@
 pkgname=pdwm
 pkgver=1.3
 _branch=pdwm
-pkgrel=04
+pkgrel=05
 pkgdesc="pdwm window manager for phyOS"
 arch=(x86_64)
 url="https://github.com/FT-Labs/pdwm/"
 license=('MIT')
-depends=('libxcb' 'libxft-bgra' 'imlib2' 'libconfig' 'phyOS-system-scripts' 'phyOS-sysconf' 'pdwm')
+depends=('libxcb' 'libxft' 'imlib2' 'libconfig' 'phyOS-system-scripts' 'phyOS-sysconf' 'pdwm')
 replaces=('phyOS-dwm-beta')
 makedepends=('git' 'make')
 optdepends=('fonts-phyOS' 'dmenu-phyOS' 'st-phyOS' 'phyOS-picom')
