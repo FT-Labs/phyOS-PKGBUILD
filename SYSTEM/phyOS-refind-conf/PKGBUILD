@@ -1,16 +1,18 @@
 # Maintainer: Arda Atci <arda@ftlabs.tech>
-pkgname=phyOS-system-scripts
-_destname1="/usr"
+pkgname=phyOS-refind-conf
+_destname1="/etc"
+_destname2="/usr"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=2.7.1
+pkgver=1.1
 pkgrel=02
-pkgdesc="Scripts & utilities for phyOS"
+pkgdesc="Configuration files for phyOS"
 arch=('x86_64')
 url="https://github.com/FT-Labs/$pkgname"
-license=('GPL3')
-depends=('gum')
+license=('AGPL3')
+depends=('grub')
 makedepends=('git')
-conflicts=("phyOS-system-scripts")
+conflicts=("phyOS-refind-conf")
+backup=('etc/default/refind')
 provides=("${pkgname}")
 options=( !strip !emptydirs )
 source=(${pkgname}::"git+https://github.com/FT-Labs/${pkgname}")
@@ -20,6 +22,9 @@ package() {
   install -dm755 "$pkgdir/$_licensedir/$pkgname"
   install -m644 "$srcdir/$pkgname/LICENSE" "$pkgdir/$_licensedir/$pkgname"
 
-  install -dm755 "$pkgdir$_destname1"
+  install -dm755 "$pkgdir/$_destname1"
   cp -r ${srcdir}/${pkgname}/${_destname1} ${pkgdir}
+
+  install -dm755 "$pkgdir$_destname2"
+  cp -r ${srcdir}/${pkgname}/${_destname2} ${pkgdir}
 }
