@@ -2,8 +2,8 @@
 pkgname=phyOS-plymouth-vortex-theme
 _destname1="/usr"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=1.0
-pkgrel=01
+pkgver=1.1
+pkgrel=0
 pkgdesc="vortex plymouth theme for phyOS"
 arch=('any')
 url="https://github.com/FT-Labs/${pkgname}"
