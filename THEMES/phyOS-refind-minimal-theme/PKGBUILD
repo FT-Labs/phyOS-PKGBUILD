@@ -3,7 +3,7 @@
 pkgname=phyOS-refind-minimal-theme
 _destname1="/boot"
 pkgver=1.0
-pkgrel=01
+pkgrel=02
 pkgdesc="Refind minimal theme"
 arch=('any')
 url="https://github.com/FT-Labs/${pkgname}"

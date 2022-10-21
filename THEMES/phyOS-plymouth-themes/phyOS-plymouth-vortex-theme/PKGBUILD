@@ -1,20 +1,21 @@
 # Maintainer: Arda Atci <arda@ftlabs.tech>
-# Maintainer: Alp Duman <alp@ftlabs.tech>
-pkgname=phyOS-refind-glassy-theme
-_destname1="/boot"
+pkgname=phyOS-plymouth-vortex-theme
+_destname1="/usr"
+_licensedir="/usr/share/phyOS/licenses/"
 pkgver=1.0
 pkgrel=01
-pkgdesc="Refind minimal theme"
+pkgdesc="vortex plymouth theme for phyOS"
 arch=('any')
 url="https://github.com/FT-Labs/${pkgname}"
-#license=('GPL3')
-depends=('refind')
+license=('GPL3')
 makedepends=('git')
 options=(!strip !emptydirs)
 replaces=()
 source=(${pkgname}::git+$url)
 sha256sums=('SKIP')
 package() {
+  install -dm755 ${pkgdir}${_licensedir}${pkgname}
+  install -m644  ${srcdir}/${pkgname}/LICENSE ${pkgdir}${_licensedir}${pkgname}
 
   cp -r ${srcdir}/${pkgname}/${_destname1} ${pkgdir}
 }
