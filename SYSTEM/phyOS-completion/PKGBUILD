@@ -1,0 +1,26 @@
+# Maintainer: Arda Atci <arda@phyos.su>
+pkgname=phyOS-completion
+_destname1="/usr"
+_licensedir="/usr/share/phyOS/licenses/"
+pkgver=1.0
+pkgrel=0
+pkgdesc="Debug completion for phyOS - linux cheat"
+arch=('x86_64')
+url="https://github.com/FT-Labs/$pkgname"
+license=('GPL3')
+makedepends=('git')
+depends=('fzf')
+conflicts=()
+backup=()
+provides=("${pkgname}")
+options=( !strip !emptydirs )
+source=(${pkgname}::"git+https://github.com/FT-Labs/${pkgname}")
+sha256sums=('SKIP')
+
+package() {
+  install -dm755 "$pkgdir/$_licensedir/$pkgname"
+  install -m644 "$srcdir/$pkgname/LICENSE.md" "$pkgdir/$_licensedir/$pkgname"
+
+  install -dm755 "$pkgdir/$_destname1"
+  cp -r ${srcdir}/${pkgname}/${_destname1} ${pkgdir}
+}

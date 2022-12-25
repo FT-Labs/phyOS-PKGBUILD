@@ -2,15 +2,15 @@
 
 pkgbase=refind
 pkgname=(refind refind-docs)
-pkgver=0.13.3.1
-pkgrel=9
+pkgver=1.0
+pkgrel=02
 pkgdesc="An EFI boot manager"
 arch=(any)
 backup=(etc/default/refind)
 url="https://www.github.com/FT-Labs/refind"
 makedepends=(bash dosfstools efibootmgr gnu-efi)
 source=(https://github.com/FT-Labs/refind/releases/download/$pkgver/$pkgbase-$pkgver.tar.gz)
-sha256sums=('3334a08cbf7979f1f83b3f662cfb12e496ccf41486acd60aea206fc83386d551')
+sha256sums=('e765b7a37f8344486f536163183fa7adc83a01b75a4188fb39f17942c79ad66f')
 _arch='x64'
 
 prepare() {
@@ -61,8 +61,10 @@ package_refind() {
   install -vDm 644 fonts/*.png -t "$pkgdir/usr/share/$pkgname/fonts/"
   # icons
   cp -rf icons "$pkgdir/usr/share/$pkgbase"
+  cp -rf refind-auto "$pkgdir/usr/share/$pkgbase"
+  install -vDm 755 refind-auto/refind-generate.service -t "$pkgdir/usr/lib/systemd/system/"
   # scripts
-  install -vDm 755 {refind-{install,mkdefault,theme},refind-mkconfig,mvrefind} -t "$pkgdir/usr/bin/"
+  install -vDm 755 {refind-{install,mkdefault,theme},refind-mkconfig,refind-mkconfig-efi,mvrefind} -t "$pkgdir/usr/bin/"
   install -vDm 755 fonts/mkfont.sh "$pkgdir/usr/bin/$pkgname-mkfont"
   # man pages
   install -vDm 644 docs/man/*.8 -t "$pkgdir/usr/share/man/man8/"
