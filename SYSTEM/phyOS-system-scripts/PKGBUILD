@@ -2,8 +2,8 @@
 pkgname=phyOS-system-scripts
 _destname1="/usr"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=2.7.1
-pkgrel=02
+pkgver=2.7.3
+pkgrel=0
 pkgdesc="Scripts & utilities for phyOS"
 arch=('x86_64')
 url="https://github.com/FT-Labs/$pkgname"

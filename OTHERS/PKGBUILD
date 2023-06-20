@@ -1,0 +1,27 @@
+# Maintainer: Arda Atci <arda@ftlabs.tech>
+# Maintainer: Alp Duman <alp@ftlabs.tech>
+
+pkgname="phyOS-simple-term-menu"
+pkgver="1.0.0"
+pkgrel="1"
+pkgdesc="A Python package which creates simple interactive menus on the command line."
+arch=("any")
+url="https://github.com/FT-Labs/phyOS-simple-term-menu"
+license=("MIT")
+depends=("python")
+makedepends=("python-setuptools")
+source=("git+https://github.com/FT-Labs/phyOS-simple-term-menu/")
+sha256sums=(SKIP)
+
+build() {
+    cd "${srcdir}/${pkgname}" || return
+    python setup.py build
+}
+
+package() {
+    cd "${srcdir}/${pkgname}" || return
+    python setup.py install --optimize=1 \
+                            --prefix=/usr \
+                            --root="${pkgdir}" \
+                            --skip-build
+}
