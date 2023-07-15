@@ -2,7 +2,7 @@
 pkgname=phyOS-completion
 _destname1="/usr"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=1.0
+pkgver=1.1
 pkgrel=0
 pkgdesc="Debug completion for phyOS - linux cheat"
 arch=('x86_64')

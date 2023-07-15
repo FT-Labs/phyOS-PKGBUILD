@@ -1,13 +1,13 @@
 # Maintainer: Arda Atci<arda@ftlabs.tech>
 pkgname=pdwmc
 pkgver=1.1
-pkgrel=01
+pkgrel=03
 pkgdesc="Config editor for pdwm"
 arch=(x86_64)
 url="https://github.com/FT-Labs/pdwmc/"
 license=('MIT')
 makedepends=('git' 'make')
-depends=('python' 'phyOS-simple-term-menu' 'python-tabulate' 'python-pycparser' 'python-pyqt5')
+depends=('python' 'python-tabulate' 'python-pycparser' 'python-pyqt5')
 optdepends=('pdwm')
 provides=("pdwmc")
 options=('zipman')
