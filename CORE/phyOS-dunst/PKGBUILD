@@ -2,15 +2,14 @@
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 # Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
 
-# Fork Maintainer: Arda Atci <arda@ftlabs.tech>
-# Fork Maintainer: Bora Pocan <bora@ftlabs.tech>
-# Fork Maintainer: Alp Duman <alp@ftlabs.tech>
+# Fork Maintainer: Arda Atci <arda@phyos.su>
 
 pkgname=phyOS-dunst
-pkgver=1.9.0
+pkgver=1.9.2
 pkgrel=0
 pkgdesc="Modified (dunst) dynamic notification-daemon for phyOS"
 url="https://dunst-project.org/"
+_url="https://github.com/FT-Labs/phyOS-dunst"
 arch=('x86_64')
 license=('BSD')
 conflicts=('dunst')
@@ -20,8 +19,10 @@ optdepends=('libnotify: dunstify')
 backup=('etc/dunst/dunstrc')
 provides=('notification-daemon')
 options=('debug')
-source=("git+https://github.com/FT-Labs/phyOS-dunst")
-md5sums=('SKIP')
+
+prepare() {
+	git clone $_url --depth 1 -b $pkgver
+}
 
 build() {
   cd "$pkgname"
