@@ -1,4 +1,4 @@
-# Maintainer: Arda Atci<arda@ftlabs.tech>
+# Maintainer: Arda Atci<arda@phyos.su>
 pkgname=libcglm
 _pkgname=cglm
 pkgver=0.8.5

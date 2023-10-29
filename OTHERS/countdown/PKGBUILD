@@ -1,0 +1,28 @@
+# Maintainer: Arda Atci<arda@phyos.su>
+pkgname=countdown
+pkgver=1.5.0
+pkgrel=0
+pkgdesc="terminal countdown timer"
+arch=('any')
+url="https://github.com/antonmedv/${pkgname}"
+license=('MIT')
+depends=('git' 'go')
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+options=()
+install=
+changelog=
+source=("https://github.com/antonmedv/countdown/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+	cd "$pkgname-$pkgver"
+	go build
+}
+
+package() {
+	cd "$pkgname-$pkgver"
+	install -Dm555 "$pkgname" "$pkgdir/usr/bin/$pkgname"
+}
