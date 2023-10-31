@@ -3,7 +3,7 @@
 
 pkgname=phyOS-keyring
 pkgver=20240603
-pkgrel=4
+pkgrel=5
 pkgdesc='phyOS GPG keyring'
 arch=('any')
 url='http://ftlabs.tech'
@@ -16,14 +16,14 @@ source=('Makefile'
 
 validpgpkeys=('F8FFF8A536F0F864F2BE3244964FD85861C858D7'  # Arda Atci
               'DF7A8F8E89F5EB5BACAE9456C8766AA76781FE80'  # Alp Duman
-              '5E29997979B066C7CCF502FE7B2148AD90FEEC50'  # Sean Benware
+              '257F78A6B2AB4E66E116A405157ABA82DD4E6A31'  # Sean Benware
               '44C009A41A9736DE709571CA9D6F2A77C56EECB0')  # Tin Cake
 
+
 sha256sums=('f17aea302ef7a3ac269418208e4867905341b6fe2f1bebbb3019f0e9eebe92ae'
-            '00621a5f0b0ab4db71035241f5e0a4f7d0f8557c5ba238b555f26bd6e9635967'
+            'd372c3507afd01262f83288c73c363134fd710984d4aea0db258c55dd8b4a8b8'
             'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
             'aaed2c78cd05add22b28587245cfe3fe9e2d2b2259a1802f09b6212f5be4501c')
-
 package() {
 	cd "${srcdir}"
 	make PREFIX=/usr DESTDIR=${pkgdir} install
