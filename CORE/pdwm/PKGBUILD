@@ -1,8 +1,8 @@
 # Maintainer: Arda Atci<arda@ftlabs.tech>
 pkgname=pdwm
-pkgver=1.3
+pkgver=1.4
 _branch=pdwm
-pkgrel=11
+pkgrel=0
 pkgdesc="pdwm window manager for phyOS"
 arch=(x86_64)
 url="https://github.com/FT-Labs/pdwm/"
