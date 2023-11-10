@@ -1,19 +1,18 @@
-# Maintainer: Arda Atci <arda@ftlabs.tech>
-# Maintainer: Alp Duman <alp@ftlabs.tech>
+# Maintainer: Arda Atci <arda@phyos.su>
 
 pkgname=lf-png
 _pkgname=lf
-pkgver=27
-pkgrel=2
+pkgver=31
+pkgrel=01
 license=('MIT')
 pkgdesc="A terminal file manager inspired by ranger written in Go, with image support"
-depends=('glibc' 'ueberzug' 'ffmpegthumbnailer' 'imagemagick' 'poppler' 'wkhtmltopdf')
-makedepends=('go' 'wget')
+depends=('glibc' 'ffmpegthumbnailer' 'imagemagick' 'poppler' 'python' 'libxres' 'libxext' 'python-attrs' 'python-docopt' 'python-pillow') # python >=3.6
+makedepends=('go' 'wget' 'git')
 arch=('aarch64' 'armv7h' 'i686' 'x86_64')
 url="https://github.com/gokcehan/lf"
-_urllfscript="https://raw.githubusercontent.com/FT-Labs/dotfiles/master/.local/bin/scripts/lfrun"
+urlpng="https://github.com/FT-Labs/lf-png"
 source=("$_pkgname-r$pkgver.tar.gz::https://github.com/gokcehan/$_pkgname/archive/r$pkgver.tar.gz")
-sha256sums=('cdd132e33387423ef9f9448e21d3f1e5c9a5319b34fdfb53cb5f49351ebac005')
+sha256sums=('SKIP')
 
 prepare() {
   # prevent creation of a `go` directory in one's home.
@@ -25,7 +24,8 @@ prepare() {
 
 build() {
   cd "${_pkgname}-r${pkgver}"
-  wget "${_urllfscript}"
+  git clone "$urlpng" --depth 1 -b master
+
   go mod vendor
   version=r$pkgver ./gen/build.sh \
       -buildmode=pie \
@@ -38,11 +38,9 @@ build() {
 
 package() {
   cd "${_pkgname}-r${pkgver}"
-  install -Dm755 -t "${pkgdir}/usr/bin" \
+  mv lf-png/* "${pkgdir}"
+  install -Dm755 -t "${pkgdir}/usr/share/lf-png" \
       ./lf
-
-  install -Dm755 -t "${pkgdir}/usr/bin" \
-      ./lfrun
 
   install -Dm644 -t "${pkgdir}/usr/share/applications" \
       ./lf.desktop

@@ -1,7 +1,7 @@
 # Maintainer: Arda Atci<arda@phyos.su>
 pkgname=pdwmc
 pkgver=2.0
-pkgrel=0
+pkgrel=01
 pkgdesc="Config editor for pdwm"
 arch=(x86_64)
 url="https://github.com/FT-Labs/pdwmc/"
