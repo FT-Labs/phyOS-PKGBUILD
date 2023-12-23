@@ -1,11 +1,11 @@
 # Maintainer: Arda Atci<arda@phyos.su>
-pkgname=physettings
-_pkgname=physettings-gtk
-pkgver=1.1
+pkgname=physettings-tui
+_pkgname=physettings
+pkgver=1.0.2
 pkgrel=0
-pkgdesc="System settings gtk application for phyOS"
+pkgdesc="System settings TUI application for phyOS"
 arch=(x86_64)
-url="https://github.com/FT-Labs/$_pkgname"
+url="https://github.com/FT-Labs/physettings/"
 license=('MIT')
 makedepends=('git' 'make' 'go')
 optdepends=('fonts-phyOS' 'st-phyOS')
