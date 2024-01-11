@@ -2,19 +2,22 @@
 pkgname=phyOS-cala-config
 _destname="/etc/calamares"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=1.6
-pkgrel=06
+pkgver=4
+pkgrel=05
 pkgdesc="calamares config for phyOS"
 arch=('any')
 url="https://github.com/FT-Labs/${pkgname}"
+_branch=master
 license=('GPL3')
 makedepends=('git')
 depends=()
 conflicts=("phyOS-cala-config")
 provides=("${pkgname}")
 options=(!strip !emptydirs)
-source=(${pkgname}::"git+https://github.com/FT-Labs/${pkgname}.git")
-sha256sums=('SKIP')
+
+prepare() {
+  git clone $url --depth 1 -b $_branch
+}
 
 package() {
 	mkdir -p "${pkgdir}${_licensedir}${pkgname}"
