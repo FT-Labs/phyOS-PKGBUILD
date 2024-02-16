@@ -1,11 +1,10 @@
 # Maintainer: Arda Atci <arda@phyos.su>
-# Maintainer: Alp Duman <alp@phyos.su>
 
 _forkname=FT-Labs
 pkgname=phyOS-picom
 _gitname=picom
 pkgver=10.2
-pkgrel=2
+pkgrel=4
 pkgdesc="X compositor (fork of compton) (git-version; animation fork)"
 arch=(i686 x86_64)
 url="https://github.com/${_forkname}/${_gitname}"
