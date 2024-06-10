@@ -2,8 +2,8 @@
 # Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=phyOS-keyring
-pkgver=20240603
-pkgrel=6
+pkgver=20240610
+pkgrel=0
 pkgdesc='phyOS GPG keyring'
 arch=('any')
 license=('GPL')
@@ -18,7 +18,7 @@ validpgpkeys=('F8FFF8A536F0F864F2BE3244964FD85861C858D7'  # Arda Atci
               '44C009A41A9736DE709571CA9D6F2A77C56EECB0')  # Tin Cake
 
 sha256sums=('f17aea302ef7a3ac269418208e4867905341b6fe2f1bebbb3019f0e9eebe92ae'
-            'd333c77eb0ec32b16c56f9c55dac15b893dcbd48faae8ed52595c944b900d1ed'
+            '6231516e658e674dab780c8c72631d617d51420e1852e8b02bb0c97d2eeb958b'
             'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
             'db8c9734ec913bc4644540760fa7791764614bfd34c5bad7e9344740fb9550ab')
 
