@@ -1,4 +1,5 @@
 ##### phyOS Mirrorlist ######
 
 ## Worldwide
+Server = https://repo.ftlabs.center/$repo/$arch
 Server = https://FT-Labs.github.io/$repo/$arch

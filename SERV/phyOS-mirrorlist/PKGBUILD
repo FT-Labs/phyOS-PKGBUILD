@@ -1,9 +1,9 @@
-# Maintainer: Arda Atci <arda@ftlabs.tech>
+# Maintainer: Arda Atci <phystecharda@gmail.com>
 
 pkgname=phyOS-mirrorlist
 _destname1="/etc/pacman.d/"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=24.06
+pkgver=07.2024
 pkgrel=0
 pkgdesc="phyOS mirrorlist for use by pacman"
 arch=('any')
@@ -15,7 +15,7 @@ provides=("${pkgname}")
 source=('phyOS-mirrorlist'
         'LICENSE')
 
-sha256sums=('01e9590a0d25d0f513e3d3b0c1558613fcc7f9b059ef7d9eb488cf4864964e58'
+sha256sums=('84e81375341f7f1b9f0eb32cbc25ec58c5dddccee55e539d2645e8c5d9fae954'
             'e1c0ad728983d8a57335e52cf1064f1affd1d454173d8cebd3ed8b4a72b48704')
 
 package() {

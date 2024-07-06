@@ -2,7 +2,7 @@
 pkgname=pdwm
 pkgver=1.4
 _branch=pdwm
-pkgrel=03
+pkgrel=05
 pkgdesc="pdwm window manager for phyOS"
 arch=(x86_64)
 url="https://github.com/FT-Labs/pdwm/"
