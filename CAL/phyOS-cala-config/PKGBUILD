@@ -2,8 +2,8 @@
 pkgname=phyOS-cala-config
 _destname="/etc/calamares"
 _licensedir="/usr/share/phyOS/licenses/"
-pkgver=4
-pkgrel=06
+pkgver=5
+pkgrel=02
 pkgdesc="calamares config for phyOS"
 arch=('any')
 url="https://github.com/FT-Labs/${pkgname}"
