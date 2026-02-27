@@ -5,11 +5,11 @@
 # Fork Maintainer: Arda Atci <arda@phyos.su>
 
 pkgname=phyOS-dunst
-pkgver=1.9.2
+pkgver=1.9.3
 pkgrel=0
 pkgdesc="Modified (dunst) dynamic notification-daemon for phyOS"
 url="https://dunst-project.org/"
-_url="https://github.com/FT-Labs/phyOS-dunst"
+_url="https://github.com/r0-zero/phyOS-dunst"
 arch=('x86_64')
 license=('BSD')
 conflicts=('dunst')

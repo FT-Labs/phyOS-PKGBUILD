@@ -1,14 +1,13 @@
-# Maintainer: Arda Atci<arda@ftlabs.tech>
+# Maintainer: Arda Atci<phystecharda@gmail.com>
 pkgname=pdwm
 pkgver=1.4
 _branch=pdwm
-pkgrel=05
+pkgrel=10
 pkgdesc="pdwm window manager for phyOS"
 arch=(x86_64)
-url="https://github.com/FT-Labs/pdwm/"
+url="https://github.com/r0-zero/pdwm/"
 license=('MIT')
-depends=('libxcb' 'libxft' 'imlib2' 'libconfig' 'phyOS-system-scripts' 'phyOS-sysconf' 'pdwm')
-replaces=('phyOS-dwm-beta')
+depends=('libxcb' 'libxft' 'imlib2' 'libconfig' 'phyOS-system-scripts' 'phyOS-sysconf')
 makedepends=('git' 'make')
 optdepends=('fonts-phyOS' 'dmenu-phyOS' 'st-phyOS' 'phyOS-picom')
 provides=("pdwm")
